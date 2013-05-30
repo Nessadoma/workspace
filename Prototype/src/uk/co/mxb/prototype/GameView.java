@@ -128,8 +128,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, OnT
 				if(event.getY() >= tileLocation.y && event.getY() <= tileLocation.y + 80)
 				{
 					Log.i("Touch", "Touch");
-					String classname = _map.get(i).getClass().toString();
-					t = Toast.makeText(_context, classname, Toast.LENGTH_SHORT);
+					String classname = _map.get(i).getClass().getName();
+					t = Toast.makeText(_context, classname + " - " + tileLocation + "- (" + tileLocation.x / 80 +", "+ tileLocation.y / 80+")", Toast.LENGTH_SHORT);
 					t.show();
 					return true;
 				}
