@@ -40,6 +40,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, OnT
 	private void Setup() 
 	{	
 		t = Toast.makeText(_context, "setup", Toast.LENGTH_SHORT);
+		t.show();
 		Log.i("Doing setup", "Setup");
 		int width = BaseTile.FINAL_PIXEL_SIZE;
 		int height = BaseTile.FINAL_PIXEL_SIZE;
@@ -119,7 +120,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, OnT
 	public boolean onTouch(View v, MotionEvent event) 
 	{
 		t.cancel();
-		//Toast.makeText(_context, "Touch", Toast.LENGTH_SHORT).show();
 		for(int i = 0; i < _map.size(); i++)
 		{
 			Point tileLocation = _map.get(i).getLocation();
@@ -133,7 +133,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, OnT
 					t.show();
 					return true;
 				}
-			}
+			}		
 		}
 		return false;
 	}
